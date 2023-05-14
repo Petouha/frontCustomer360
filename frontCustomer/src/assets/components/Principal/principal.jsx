@@ -13,7 +13,7 @@ const Principal = () => {
   // Fonction pour récupérer les détails du client à partir de l'API
   const fetchCustomerDetails = async (customerId) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/customers/${customerId}`);
+      const response = await axios.get(`http://localhost:8000/api/v1/users/${customerId}`);
       setCustomerDetails(response.data);
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ const Principal = () => {
   // Fonction pour récupérer le comportement du client à partir de l'API
   const fetchCustomerBehavior = async (customerId) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/customers/${customerId}/behavior`);
+      const response = await axios.get(`http://localhost:8000/api/v1/users/behavior/${customerId}`);
       setCustomerBehavior(response.data);
     } catch (error) {
       console.log(error);
@@ -33,7 +33,7 @@ const Principal = () => {
   // Fonction pour récupérer l'historique du client à partir de l'API
   const fetchCustomerHistory = async (customerId) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/customers/${customerId}/history`);
+      const response = await axios.get(`http://localhost:8000/api/v1/users/histort/${customerId}`);
       setCustomerHistory(response.data);
     } catch (error) {
       console.log(error);
@@ -51,7 +51,7 @@ const Principal = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/customers?search=${searchTerm}`);
+      const response = await axios.get(`http://localhost:8000/api/v1/users?search=${searchTerm}`);
       const customer = response.data[0];
       fetchCustomerDetails(customer.id);
       fetchCustomerBehavior(customer.id);
