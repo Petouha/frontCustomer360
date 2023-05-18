@@ -1,66 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url('./imagered.png');
+    background-size: cover;
+
+
+}
+
+
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+
+
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 50px;
+}
+
+/* Reste du code CSS inchangé */
+
+
+.form input {
+    font-family: 'Poppins';
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+
+}
+
+.form button {
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    outline: 0;
+    background: #ce0404;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #d60505;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.form .register-form {
+    display: none;
+}
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+.container:before,
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  width: 100%;
+.container .info {
+    margin: 50px auto;
+    text-align: center;
 }
 
-.form-group label {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
 }
 
-.form-group input {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  color: #333;
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
 }
 
-.form-group input:focus {
-  outline: none;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
 }
 
-.btn {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  background-color: #0077cc;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.container .info span .fa {
+    color: #EF3B3A;
 }
 
-.btn:hover {
-  background-color: #005ea6;
-}
-
-.error-message {
-  margin-top: 1rem;
-  color: red;
-  font-size: 0.8rem;
+.photo-profil {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }

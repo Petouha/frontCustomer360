@@ -62,15 +62,17 @@ const Principal = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <label htmlFor="search">Entrer un numero :</label>
-        <input type="text" id="search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-        <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
-      </form>
-      <div className="container">
-       <div className="customer-details">
-        <h2>Customer Details</h2>
+    <div id="container">
+      <div id="search-form">
+        <form onSubmit={handleSearch}>
+          <label htmlFor="search">Entrer un numero :</label>
+          <input type="text" id="search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+        </form>
+      </div >
+      <div class="section-container">
+        <div id="customer-details" class="section white-box">
+          <h2>Customer Details</h2>
           <p><strong>Nom complet :</strong> {customerDetails.name}</p>
           <p><strong>Téléphone :</strong> {customerDetails.phone}</p>
           <p><strong>Wilaya :</strong> {customerDetails.city}</p>
@@ -83,50 +85,52 @@ const Principal = () => {
           <p><strong>Type SIM :</strong> {customerDetails.simType}</p>
           <p><strong>Etat :</strong> {customerDetails.status}</p>
         </div>
-      </div>
-  
-        
 
 
-      <div className="customer-behavior">
-        <h2>Customer Behavior</h2>
-        <div className="customer-behavior-details">
-          <p><strong>Balance :</strong> {customerBehavior.balance}</p>
-          <p><strong>Segment :</strong> {customerBehavior.segment}</p>
-          <p><strong>Comportement :</strong> {customerBehavior.comportement}</p>
-          <p><strong>Détails :</strong> {customerBehavior.details}</p>
-          <p><strong>Epaiment :</strong> {customerBehavior.epaiment}</p>
-        </div>
-        <ul>
-          {customerBehavior.map((item) => (
-            <li key={item.id}>{item.action} - {item.date}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="customer-history">
-        <h2>Customer History</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Transaction</th>
-              <th>Montant</th>
-            </tr>
-          </thead>
-          <tbody>
+
+
+
+        <div id="customer-behavior" class="section white-box">
+          <h2>Customer Behavior</h2>
+          <div className="customer-behavior-details">
+            <p><strong>Balance :</strong> {customerBehavior.balance}</p>
+            <p><strong>Segment :</strong> {customerBehavior.segment}</p>
+            <p><strong>Comportement :</strong> {customerBehavior.comportement}</p>
+            <p><strong>Détails :</strong> {customerBehavior.details}</p>
+            <p><strong>Epaiment :</strong> {customerBehavior.epaiment}</p>
+          </div>
+          <ul>
             {customerBehavior.map((item) => (
-              <tr key={item.id}>
-                <td>{item.date}</td>
-                <td>{item.action}</td>
-                <td>{item.montant}</td>
-              </tr>
+              <li key={item.id}>{item.action} - {item.date}</li>
             ))}
-          </tbody>
-        </table>
-     </div>     
+          </ul>
+        </div>
+        <div id="customer-history" class="section white-box">
+          <h2>Customer History</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Transaction</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              {customerBehavior.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.date}</td>
+                  <td>{item.action}</td>
+                  <td>{item.montant}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-   
-  )}; 
+
+  )
+};
 
 
-  export default Principal;
+export default Principal;
