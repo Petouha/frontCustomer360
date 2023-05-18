@@ -4,16 +4,22 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* Assurez-vous que le conteneur a une hauteur définie */
+
 }
 
 #search-form {
+
   position: absolute;
+
   top: 0;
   right: 0;
   padding: 10px;
 }
 
+.search-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
 
 #search-form form {
   display: flex;
@@ -25,8 +31,49 @@
 }
 
 #search-form input[type="text"] {
-  width: 200px;
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  background-image: url("https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 5px) center;
+  background-size: 25px 25px;
+  padding-right: 20px;
+  border: 1px solid white;
+  text-align: center;
+  font-size: 16px;
+  color: gray;
 }
+
+
+#search-form button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 5px;
+}
+
+#search-form button svg {
+  width: 20px;
+  height: 30px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: gray;
+  cursor: pointer;
+  left: 30px;
+}
+
+
+
+
+
+
+
 
 
 .section-container {
@@ -34,13 +81,11 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  /* Ajoute un espace entre les sections */
 }
 
 .white-box {
   display: inline-block;
   width: 300px;
-  /* Définir la largeur souhaitée pour les cadres blancs */
   vertical-align: top;
   margin: 10px;
   padding: 20px;
@@ -49,7 +94,6 @@
 
 .section.white-box {
   height: 400px;
-  /* Remplacez la valeur par la hauteur souhaitée */
 }
 
 
@@ -98,7 +142,6 @@
   margin: 0 10px;
   width: 300px;
   background-color: #fff;
-  /* Ajout de la couleur de fond */
 }
 
 .section th,
