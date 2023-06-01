@@ -56,11 +56,18 @@
       try {
         const response = await axios.get(`http://localhost:8000/api/v1/users/${searchTerm}`);
         const customer = response.data;
-        
-        fetchCustomerDetails(customer.subscriber_info[0].MSISDN);
+        console.log(customer);
+        if(customer.subscriber_info.length)
+        {
+          fetchCustomerDetails(customer.subscriber_info[0].MSISDN);
         fetchCustomerBehavior(customer.subscriber_info[0].MSISDN);
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
-        console.log(customerHistory);
+      }
+        else{
+          setCustomerDetails([]);
+          setCustomerBehavior([]);
+          setCustomerHistory([]);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -82,7 +89,7 @@
           <div class="section-container">
             <div id="customer-details" class="section white-box">
               <h2>Customer Details</h2>
-              <p><strong>Nom complet :</strong> {customerDetails.fullName || "NaN"}</p>
+              <p><strong>Nom complet :</strong> {customerDetails.fullName}</p>
               <p><strong>Téléphone :</strong> {customerDetails.MSISDN}</p>
               <p><strong>Wilaya :</strong> {customerDetails.wilaya}</p>
               <p><strong>Age :</strong> {customerDetails.Age}</p>

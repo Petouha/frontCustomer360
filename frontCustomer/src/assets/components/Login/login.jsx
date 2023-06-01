@@ -17,8 +17,9 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:8000/api/v1/login', { email, password });
       if (response.data.auth) {
+        console.log(response.data.auth);
         navigate("/principal");// mettre à jour l'état isLoggedIn à true pour la redirection vers la page principale
-      } else navigate("/testcomp");
+      }
     } catch (err) {
       console.error(err);
       setError('Nom d\'utilisateur ou mot de passe incorrect');
