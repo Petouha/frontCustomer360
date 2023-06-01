@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
+import user from './user.png'
 
 
 export const Menu = () => {
@@ -38,7 +38,7 @@ export const Menu = () => {
     <div className="App">
         <div className='menu-container' ref={menuRef}>
             <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>
-                <img src={<FontAwesomeIcon icon={faSearch} />}></img>
+            <img src={user}></img>
             </div>
             <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
                 <h3>The Kiet<br/><span>Website Designer</span></h3>
