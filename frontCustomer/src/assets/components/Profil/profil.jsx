@@ -43,7 +43,7 @@ const UserPage = () => {
       <h1>Statistique </h1>
       <p>Activation: {user.activation}</p>
       <p>Migration: {user.migration}</p>
-      
+
       <h1>rapport agent</h1>
       <ul>
         {user.AppelReport.map((report) => (

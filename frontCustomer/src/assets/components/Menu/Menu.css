@@ -22,15 +22,16 @@
 
 .dropdownItem img {
   max-width: 20px;
-  margin-right: 10px;
+  margin-right: 30px;
   opacity: 0.5;
   transition: var(--speed);
+  margin-left: 30px;
 
 }
 
 .dropdownItem a {
   max-width: 100px;
-  margin-left: 10px;
+  margin-left: 20px;
   transition: var(--speed);
   color: #000000;
   /* Changer la couleur du texte en noir foncé */
@@ -48,6 +49,7 @@
   overflow: hidden;
   cursor: pointer;
   background-color: #fff;
+  margin-right: 10px;
 }
 
 .dropdown-menu {
