@@ -41,7 +41,7 @@ const UserPage = () => {
         <img src={user.png} alt="User Photo" />
       </div>
       <h1>Statistique </h1>
-     
+      <p>Activation: {user.activation}</p>
       <p>Migration: {user.migration}</p>
       
       <h1>rapport agent</h1>
@@ -50,7 +50,8 @@ const UserPage = () => {
           <li key={report.id}>
             <p>Date: {report.date}</p>
             <p>Migration: {report.migration}</p>
-           
+            <p>Date: {report.date}</p>
+            <p>Activation: {report.activation}</p>
           </li>
         ))}
       </ul>
