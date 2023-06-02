@@ -100,7 +100,7 @@
 
 .section {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 20px;
   text-align: left;
   margin: 0 10px;
@@ -136,7 +136,7 @@
 
 .section {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 20px;
   text-align: left;
   margin: 0 10px;
@@ -150,4 +150,21 @@
   text-align: left;
   border-bottom: 1px solid #ccc;
   font-size: 14px;
+}
+
+#customer-details h2,
+#customer-behavior h2,
+#customer-history h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.section p,
+.section ul,
+.section li,
+.section table,
+.section th,
+.section td {
+  line-height: 1.5;
+  /* Remplacez la valeur par celle de votre choix */
 }
