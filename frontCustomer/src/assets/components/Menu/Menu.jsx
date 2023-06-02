@@ -3,6 +3,7 @@ import './Menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import user from './user.png'
+import { utilisateur} from '../utilisateur/utilisateur';
 
 
 export const Menu = () => {
