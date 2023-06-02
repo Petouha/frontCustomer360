@@ -92,8 +92,8 @@ const Principal = () => {
           <div id="customer-details" class="section white-box">
             <h2>Customer Details</h2>
 
-            <p><strong>Nom complet :</strong><div class="input-field"> {customerDetails.fullName}</div></p>
-            <p><strong>Téléphone :</strong> <div class="input-field">{customerDetails.MSISDN}</div> </p>
+            <p><strong>Nom complet :</strong><div class=" input-field"> {customerDetails.fullName}</div></p>
+            <p><strong>Téléphone :</strong> <div class=" input-field">{customerDetails.MSISDN}</div> </p>
             <p><strong>Wilaya :</strong> <div class="input-field">{customerDetails.wilaya} </div></p>
             <p><strong>Age :</strong> <div class="input-field">{customerDetails.Age}</div></p>
             <p><strong>Ancienneté :</strong> <div class="input-field">{customerDetails.Seniority}</div></p>
@@ -111,13 +111,13 @@ const Principal = () => {
 
 
           <div id="customer-behavior" class="section white-box">
-            <h2>Customer Behavior</h2>
+            <h2>Comportement</h2>
             <div class="customer-behavior-details">
-              <p><strong>Balance :</strong> {customerBehavior.balance}</p>
-              <p><strong>Segment :</strong> {customerBehavior.valueSegment}</p>
-              <p><strong>Comportement :</strong> {customerBehavior.behaviorSegments}</p>
-              <p><strong>Détails :</strong> {customerBehavior.details}</p>
-              <p><strong>Epaiment :</strong> {customerBehavior.epaiment}</p>
+              <p><strong>Balance :</strong> <span class=" input-field-b">{customerBehavior.balance}</span></p>
+              <p><strong>Segment :</strong> <span class=" input-field-b">{customerBehavior.valueSegment}</span></p>
+              <p><strong>Comportement :</strong> <span class=" input-field-b">{customerBehavior.behaviorSegments} </span></p>
+              <p><strong>Détails :</strong> <span class=" input-field-b"> {customerBehavior.details}</span></p>
+              <p><strong>Epaiment :</strong><span class=" input-field-b"> {customerBehavior.epaiment} </span></p>
             </div>
             {/* <ul>
                 {customerHistory.map((item) => (
@@ -126,7 +126,7 @@ const Principal = () => {
               </ul> */}
           </div>
           <div id="customer-history" class="section white-box">
-            <h2>Customer History</h2>
+            <h2>Historique des activations</h2>
             <table>
               <thead>
                 <tr>

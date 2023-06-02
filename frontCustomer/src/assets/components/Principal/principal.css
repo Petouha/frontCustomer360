@@ -31,9 +31,9 @@
 }
 
 #search-form input[type="text"] {
-  width: 400px;
-  height: 40px;
-  border-radius: 20px;
+  width: 500px;
+  height: 50px;
+  border-radius: 30px;
   background-image: url("https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png");
   background-repeat: no-repeat;
   background-position: calc(100% - 5px) center;
@@ -94,6 +94,7 @@
 
 .section.white-box {
   height: 400px;
+  width: 350px;
 }
 
 
@@ -156,15 +157,68 @@
 #customer-behavior h2,
 #customer-history h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 27px;
+  text-align: center;
 }
 
-.section p,
-.section ul,
-.section li,
-.section table,
-.section th,
-.section td {
-  line-height: 1.5;
+
+.section p {
+  line-height: 1.6;
+  margin-left: 30px;
   /* Remplacez la valeur par celle de votre choix */
+}
+
+.section ul {
+  line-height: 1.6;
+  margin-left: 30px;
+  /* Remplacez la valeur par celle de votre choix */
+}
+
+.section li {
+  line-height: 1.6;
+  margin-left: 50px;
+  /* Remplacez la valeur par celle de votre choix */
+}
+
+.section table {
+  line-height: 1.6;
+  margin-left: 10px;
+  /* Remplacez la valeur par celle de votre choix */
+}
+
+.section th {
+  line-height: 1.6;
+  margin-left: 30px;
+  /* Remplacez la valeur par celle de votre choix */
+}
+
+.section td {
+  line-height: 1.6;
+  margin-left: 10px;
+  /* Remplacez la valeur par celle de votre choix */
+}
+
+
+
+
+
+.input-field {
+  float: right;
+  width: 100px;
+  height: 20px;
+  background-color: #ccc;
+  margin-right: 50px;
+  margin-left: 12px;
+  border-radius: 5px;
+
+}
+
+.input-field-b {
+  float: right;
+  width: 100px;
+  height: 20px;
+  background-color: #ccc;
+  margin-right: 40px;
+  margin-left: 22px;
+  border-radius: 5px;
 }
