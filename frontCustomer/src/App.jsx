@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Login from "./assets/components/Login/login"
 import Principal from "./assets/components/Principal/principal.jsx";
-import TestComp from "./assets/components/TestComp/testcomp"
+import Profil from "./assets/components/Profil/profil"
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/principal" element={<Principal />} />
-      <Route path="/testcomp" element={<TestComp />} />
+      <Route path="/profil" element={<Profil />} />
     </Routes>
   );
 }
