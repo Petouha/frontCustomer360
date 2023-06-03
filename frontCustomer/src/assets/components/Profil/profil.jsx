@@ -30,7 +30,7 @@ const UserPage = () => {
               action: 'migration',
               date: '2023-05-02',
               name: 'John Doe',
-              montant: 2 
+              montant: 2
             }
           ],
           name: 'John Doe',
@@ -59,16 +59,20 @@ const UserPage = () => {
   }
 
   return (
+
     <div className="container">
+      <img src="https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png" alt="Description de l'image" className="photo-profil" />
+
       <div className="side-section">
-        <img src={user.logo} alt="User Logo" />
+        <img src="https://cdn-icons-png.flaticon.com/512/20/20698.png" alt="User Logo" className="photodeprofil" />
+
         <div className="labels">
           <p>Profil</p>
           <p>Stats</p>
           <p>Rapport Agent</p>
         </div>
       </div>
-      <div className="main-section">
+      <div className="user-info">
         <h1>User Table</h1>
         <table>
           <thead>
@@ -87,9 +91,22 @@ const UserPage = () => {
           </tbody>
         </table>
         <h1>Statistique</h1>
-        <p>Activation: {user.activation}</p>
-        <p>Migration: {user.migration}</p>
-      
+        <div className="stats-table">
+
+          <table>
+            <tbody>
+              <tr>
+                <td>Activation:</td>
+                <td>{user.activation}</td>
+              </tr>
+              <tr>
+                <td>Migration:</td>
+                <td>{user.migration}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <h1>Rapport Agent</h1>
         <table>
           <thead>
@@ -103,15 +120,20 @@ const UserPage = () => {
           <tbody>
             {user.AppelReport.map((report) => (
               <tr key={report.id}>
+                <td>{report.action}</td>
                 <td>{report.date}</td>
-                <td>{report.migration}</td>
-                <td>{report.activation}</td>
+                <td>{report.name}</td>
+                <td>{report.montant}</td>
               </tr>
+
             ))}
           </tbody>
+
         </table>
+
       </div>
     </div>
+
   );
 };
 
