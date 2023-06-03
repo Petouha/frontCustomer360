@@ -3,6 +3,7 @@ import Login from "./assets/components/Login/login"
 import Principal from "./assets/components/Principal/principal.jsx";
 import Profil from "./assets/components/Profil/profil"
 import { Routes, Route } from "react-router-dom";
+import { RequireAuth } from "react-auth-kit";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -25,7 +26,9 @@ function App() {
     // </div>
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/principal" element={<Principal />} />
+      <Route path="/principal" element={<RequireAuth loginPath="/">
+        <Principal />
+      </RequireAuth>} />
       <Route path="/profil" element={<Profil />} />
     </Routes>
   );
