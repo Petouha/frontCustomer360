@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './login.css';
-
+import { useSignIn } from 'react-auth-kit';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,15 +10,21 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  let auth = false;
+  const signIn = useSignIn();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:8000/api/v1/login', { email, password });
       if (response.data.auth) {
-        console.log(response.data.auth);
-        navigate("/principal");// mettre à jour l'état isLoggedIn à true pour la redirection vers la page principale
+        console.log(response.data.token);
+        signIn({
+          token : response.data.token,
+          expiresIn: 10,
+          tokenType: String,
+          authState: {email : email}
+        });
+        navigate("/principal");
       }
     } catch (err) {
       console.error(err);
