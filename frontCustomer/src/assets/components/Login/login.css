@@ -4,7 +4,7 @@ body {
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url('./imagered.png');
+    background-image: url('./aa.png');
     background-size: cover;
 
 
@@ -13,23 +13,28 @@ body {
 
 
 .login-page {
-    width: 360px;
-    padding: 8% 0 0;
-    margin: auto;
-
-
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 .form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 0 auto 30px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 50px;
+    width: 400px;
+    height: 300px;
+    font-family: sans-serif;
 }
 
 /* Reste du code CSS inchangé */
@@ -46,6 +51,7 @@ body {
     box-sizing: border-box;
     font-size: 14px;
     border-radius: 10px;
+    margin: 15px 0;
 
 }
 
@@ -62,7 +68,7 @@ body {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-
+    margin-top: 15px;
     border-radius: 10px;
 }
 
@@ -134,4 +140,14 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
+
+}
+
+
+.btn {
+    font-family: sans-serif !important;
+}
+
+.login-title {
+    margin-bottom: 20px;
 }

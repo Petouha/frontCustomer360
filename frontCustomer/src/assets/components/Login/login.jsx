@@ -19,12 +19,12 @@ const Login = () => {
       if (response.data.auth) {
         console.log(response.data.token);
         signIn({
-          token : response.data.token,
+          token: response.data.token,
           expiresIn: 60,
           tokenType: String,
-          authState: {email : email}
+          authState: { email: email }
         });
-        localStorage.setItem("email",response.data.email);
+        localStorage.setItem("email", response.data.email);
         navigate("/principal");
       }
     } catch (err) {
@@ -38,7 +38,7 @@ const Login = () => {
       <div class="login-page" >
 
         <div class="form">
-          <h1 >Se connecter</h1>
+          <h1 class="login-title">Se connecter</h1>
           <form onSubmit={handleSubmit} class="login-form">
             <label htmlFor="username">Nom d'utilisateur :</label>
             <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -47,7 +47,7 @@ const Login = () => {
             <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <br />
             {error && <div class="error-message" style={{ color: 'red' }}>{error}</div>}
-            <button class="btn" type="submit">Login</button>
+            <button class="btn login-button" type="submit">Login</button>
           </form>
         </div>
       </div>
