@@ -1,45 +1,52 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './profil.css';
 
 const UserPage = () => {
   const [user, setUser] = useState(null);
+  const [userReport,setUserReport] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  let isLoggedIn;
   useEffect(() => {
     // Simulating API call with static data
     const fetchUser = async () => {
       try {
+        const email = localStorage.getItem("email");
+        const response = await axios.post(`http://localhost:8000/api/v1/employees/info`,{email});
+        console.log(response.data.user_info[0]);
         // Replace this with your static user data
-        const staticUser = {
-          logo: 'path/to/userLogo.png',
-          photo: 'path/to/userPhoto.png',
-          totalAppel: 10,
-          migration: 5,
-          activation: 3,
-          AppelReport: [
-            {
-              id: 1,
-              action: 'migration',
-              date: '2023-05-02',
-              name: 'John Doe',
-              montant: 2
-            },
-            {
-              id: 1,
-              action: 'migration',
-              date: '2023-05-02',
-              name: 'John Doe',
-              montant: 2
-            }
-          ],
-          name: 'John Doe',
-          lastLogin: '2023-05-03',
-          isLoggedIn: true
-        };
+        // const staticUser = {
+        //   logo: 'path/to/userLogo.png',
+        //   photo: 'path/to/userPhoto.png',
+        //   totalAppel: 10,
+        //   migration: 5,
+        //   activation: 3,
+        //   AppelReport: [
+        //     {
+        //       id: 1,
+        //       action: 'migration',
+        //       date: '2023-05-02',
+        //       name: 'John Doe',
+        //       montant: 2
+        //     },
+        //     {
+        //       id: 1,
+        //       action: 'migration',
+        //       date: '2023-05-02',
+        //       name: 'John Doe',
+        //       montant: 2
+        //     }
+        //   ],
+        //   name: 'John Doe',
+        //   lastLogin: '2023-05-03',
+        //   isLoggedIn: true
+        // };
 
-        setUser(staticUser);
+        setUser(response.data.user_info[0]);
+        setUserReport(response.data.sales)
         setLoading(false);
+        isLoggedIn = true;
       } catch (error) {
         setError(error.message);
         setLoading(false);
@@ -84,9 +91,9 @@ const UserPage = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{user.name}</td>
-              <td>{user.lastLogin}</td>
-              <td>{user.isLoggedIn ? 'Connected' : 'Not Connected'}</td>
+              <td>{user.firstName + " " + user.lastName}</td>
+              <td>{user.previousLogin}</td>
+              <td>{isLoggedIn ? 'Connected' : 'Not Connected'}</td>
             </tr>
           </tbody>
         </table>
@@ -118,12 +125,12 @@ const UserPage = () => {
             </tr>
           </thead>
           <tbody>
-            {user.AppelReport.map((report) => (
+            {userReport.map((report) => (
               <tr key={report.id}>
-                <td>{report.action}</td>
-                <td>{report.date}</td>
-                <td>{report.name}</td>
-                <td>{report.montant}</td>
+                <td>{report.saleType}</td>
+                <td>{report.dateSale}</td>
+                <td>{report.fullName}</td>
+                <td>{report.price}</td>
               </tr>
 
             ))}
