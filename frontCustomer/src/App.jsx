@@ -29,7 +29,9 @@ function App() {
       <Route path="/principal" element={<RequireAuth loginPath="/">
         <Principal />
       </RequireAuth>} />
-      <Route path="/profil" element={<Profil />} />
+      <Route path="/profil" element={<RequireAuth loginPath="/">
+        <Profil />
+      </RequireAuth>} />
     </Routes>
   );
 }

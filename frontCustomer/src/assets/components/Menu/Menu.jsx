@@ -34,7 +34,7 @@ export const Menu = () => {
     return (
       <li className='dropdownItem'>
         <img className='dropdownItem-icon' src={props.img} alt='Icon' />
-        <a className='dropdownItem-text' href={props.link}>{props.text}</a>
+        <a className='dropdownItem-text' href={props.link} style={{ textDecoration: 'none' }}>{props.text}</a>
 
       </li>
     );

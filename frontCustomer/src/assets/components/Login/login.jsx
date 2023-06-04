@@ -20,10 +20,11 @@ const Login = () => {
         console.log(response.data.token);
         signIn({
           token : response.data.token,
-          expiresIn: 10,
+          expiresIn: 60,
           tokenType: String,
           authState: {email : email}
         });
+        localStorage.setItem("email",response.data.email);
         navigate("/principal");
       }
     } catch (err) {
