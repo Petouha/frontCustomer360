@@ -222,8 +222,13 @@
   margin-left: 10px;
   border-radius: 5px;
 }
-/* ... Votre code CSS existant ... */
 
+.table-container
+{
+  overflow-y:auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}
 .offer-section {
   display: flex;
   justify-content: center;
@@ -249,3 +254,4 @@
   font-size: 18px;
   margin-bottom: 10px;
 }
+

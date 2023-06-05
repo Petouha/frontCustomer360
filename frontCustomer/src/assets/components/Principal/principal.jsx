@@ -81,7 +81,7 @@ const Principal = () => {
         fetchCustomerDetails(customer.subscriber_info[0].MSISDN);
         fetchCustomerBehavior(customer.subscriber_info[0].MSISDN);
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
-        fetchCustomerHistory(customer.eligble_package[0].MSISDN);
+        setCustomerPackages(customer.eligble_packages);
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
@@ -183,3 +183,4 @@ const Principal = () => {
 };
 
 export default Principal;
+

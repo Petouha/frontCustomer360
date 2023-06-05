@@ -1,0 +1,25 @@
+const onClickActivate = (props) =>
+  {
+    const confirmed = window.confirm("Are you sure you want to activate this package?");
+    if (confirmed) {
+      const MSISDN = props.MSISDN;
+      const pkgId= props.idPackage;
+      console.log(MSISDN,pkgId);
+      const response = axios.post(`http://localhost:8000/api/v1/users/activate`, {MSISDN,pkgId});
+      console.log(response);
+    }
+  }
+
+  {/* <div class="section-container">
+            <div id="packages-details" class="section white-box">
+              <h2>Customer Details</h2>
+                  {customerPackages.map((pkg) =>
+                  (
+                    <tr key={pkg.id}>
+                      <td>{pkg.price}</td>
+                      <td>{pkg.commercialName}</td>
+                      <button class="activate" onClick={() => onClickActivate({ idPackage: pkg.id , MSISDN:customerDetails.MSISDN})}>Activer</button>
+                    </tr> 
+                  ))}
+            </div>
+          </div> */}
