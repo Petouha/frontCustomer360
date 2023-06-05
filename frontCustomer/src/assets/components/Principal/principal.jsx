@@ -33,16 +33,6 @@ const Principal = () => {
       console.log(error);
     }
   };
-
-  const fetchCustomerPackages = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/api/v1/users/packages');
-      setCustomerPackages(response.data.eligble_packages);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   // Fonction pour récupérer le comportement du client à partir de l'API
   const fetchCustomerBehavior = async (customerId) => {
     try {
@@ -68,7 +58,6 @@ const Principal = () => {
     fetchCustomerDetails(searchTerm);
     fetchCustomerBehavior(searchTerm);
     fetchCustomerHistory(searchTerm);
-    fetchCustomerPackages();
   }, []);
 
   // Fonction pour gérer la soumission du formulaire de recherche
@@ -93,18 +82,18 @@ const Principal = () => {
   };
 
   // Fonction pour activer une offre
-  const handleActivateOffer = (offerId) => {
-    // Parcourez les offres recommandées et les offres Internet pour trouver l'offre correspondante
-    const updatedRecommendedOffers = recommendedOffers.map((offer) =>
-      offer.id === offerId ? { ...offer, activated: true } : offer
-    );
-    const updatedInternetOffers = internetOffers.map((offer) =>
-      offer.id === offerId ? { ...offer, activated: true } : offer
-    );
+  // const handleActivateOffer = (offerId) => {
+  //   // Parcourez les offres recommandées et les offres Internet pour trouver l'offre correspondante
+  //   const updatedRecommendedOffers = recommendedOffers.map((offer) =>
+  //     offer.id === offerId ? { ...offer, activated: true } : offer
+  //   );
+  //   const updatedInternetOffers = internetOffers.map((offer) =>
+  //     offer.id === offerId ? { ...offer, activated: true } : offer
+  //   );
 
-    setRecommendedOffers(updatedRecommendedOffers);
-    setInternetOffers(updatedInternetOffers);
-  };
+  //   setRecommendedOffers(updatedRecommendedOffers);
+  //   setInternetOffers(updatedInternetOffers);
+  // };
 
   return (
     <div>
@@ -149,6 +138,7 @@ const Principal = () => {
   
           <div id="customer-history" className="section white-box">
             <h2>Historique des activations</h2>
+            <div className='table-container'>
             <table>
               <thead>
                 <tr>
@@ -171,32 +161,29 @@ const Principal = () => {
                 )}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
         <div className="offer-section">
           <div className="offer-box">
             <h2>Offres recommandées</h2>
             {recommendedOffers.map((offer) => (
-              <Offer key={offer.id} offer={offer} onActivateOffer={handleActivateOffer} />
+              <Offer key={offer.id} offer={offer}  />
             ))}
           </div>
 
           <div className="offer-box">
             <h2>Offres voix</h2>
             {/* Utilisation de données statiques */}
-            {[
-              { id: 1, title: 'Voice Offer 1', description: 'Description of voice offer 1', activated: false },
-              { id: 2, title: 'Voice Offer 2', description: 'Description of voice offer 2', activated: false },
-              { id: 3, title: 'Voice Offer 3', description: 'Description of voice offer 3', activated: false },
-            ].map((offer) => (
-              <Offer key={offer.id} offer={offer} onActivateOffer={handleActivateOffer} />
+            {customerPackages.map((offer) => (
+              <Offer key={offer.id} offer={offer}  MSISDN={customerDetails.MSISDN} />
             ))}
           </div>
 
           <div className="offer-box">
             <h2>Offres Internet</h2>
             {internetOffers.map((offer) => (
-              <Offer key={offer.id} offer={offer} onActivateOffer={handleActivateOffer} />
+              <Offer key={offer.id} offer={offer} />
             ))}
           </div>
         </div>
