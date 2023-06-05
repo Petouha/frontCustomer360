@@ -109,47 +109,70 @@ const Principal = () => {
   return (
     <div>
       <Menu />
-      <img
-        src="https://scontent.cdninstagram.com/v/t1.15752-9/293558223_1184855078914133_5227506387825766741_n.png?stp=dst-png_s320x320&_nc_cat=104&ccb=1-7&_nc_sid=5a057b&_nc_ohc=-7KlQnO2PJ4AX_wtQ_f&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.cdninstagram.com&oh=03_AdS6sqoGtonY6PAC8BALoU8O0aYDNaDKU9sJ91phUN2uGg&oe=648DE044"
-        alt="Description de l'image"
-        className="photo-profil"
-      />
+      <img src="https://scontent.cdninstagram.com/v/t1.15752-9/293558223_1184855078914133_5227506387825766741_n.png?stp=dst-png_s320x320&_nc_cat=104&ccb=1-7&_nc_sid=5a057b&_nc_ohc=-7KlQnO2PJ4AX_wtQ_f&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.cdninstagram.com&oh=03_AdS6sqoGtonY6PAC8BALoU8O0aYDNaDKU9sJ91phUN2uGg&oe=648DE044" alt="Description de l'image" className="photo-profil" />
       <div id="container">
         <div id="search-form">
           <form onSubmit={handleSearch}>
             <div className="search-container">
-              <input
-                type="text"
-                id="search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Entrer un numéro"
-              />
-              <span className="search-icon">
-                <FontAwesomeIcon icon={faSearch} />
-              </span>
+              <input type="text" id="search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Entrer un numéro" />
+              <span className="search-icon"><FontAwesomeIcon icon={faSearch} /></span>
             </div>
           </form>
         </div>
-
+  
         <div className="section-container">
           <div id="customer-details" className="section white-box">
             <h2>Customer Details</h2>
-            {/* ... */}
-
+            <p><strong>Nom complet :</strong><span className="input-field"> {customerDetails.fullName}</span></p>
+            <p><strong>Téléphone :</strong> <span className="input-field">{customerDetails.MSISDN}</span> </p>
+            <p><strong>Wilaya :</strong> <span className="input-field">{customerDetails.wilaya}</span></p>
+            <p><strong>Age :</strong> <span className="input-field">{customerDetails.Age}</span></p>
+            <p><strong>Ancienneté :</strong> <span className="input-field">{customerDetails.Seniority}</span></p>
+            <p><strong>NPS :</strong> <span className="input-field">{customerDetails.nps}</span></p>
+            <p><strong>Sexe :</strong> <span className="input-field">{customerDetails.sex}</span></p>
+            <p><strong>Souscription :</strong><span className="input-field"> {customerDetails.Subscriptions_Type}</span></p>
+            <p><strong>Réseau :</strong><span className="input-field"> {customerDetails.lineType}</span></p>
+            <p><strong>Type SIM :</strong><span className="input-field"> {customerDetails.simType}</span></p>
+            <p><strong>Etat :</strong> <span className="input-field">{customerDetails.status}</span></p>
           </div>
-
+  
           <div id="customer-behavior" className="section white-box">
             <h2>Comportement</h2>
-            {/* ... */}
+            <div className="customer-behavior-details">
+              <p><strong>Balance :</strong> <span className="input-field-b">{customerBehavior.balance}</span></p>
+              <p><strong>Segment :</strong> <span className="input-field-b">{customerBehavior.valueSegment}</span></p>
+              <p><strong>Comportement :</strong> <span className="input-field-b">{customerBehavior.behaviorSegments}</span></p>
+              <p><strong>Détails :</strong> <span className="input-field-b"> {customerBehavior.details}</span></p>
+              <p><strong>Epaiment :</strong><span className="input-field-b"> {customerBehavior.epaiment}</span></p>
+            </div>
           </div>
-
+  
           <div id="customer-history" className="section white-box">
             <h2>Historique des activations</h2>
-            {/* ... */}
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Forfait</th>
+                </tr>
+              </thead>
+              <tbody>
+                {customerHistory && customerHistory.length > 0 ? (
+                  customerHistory.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.dateActivation}</td>
+                      <td>{item.commercialName}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="2">No customer history available.</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
         </div>
-
         <div className="offer-section">
           <div className="offer-box">
             <h2>Offres recommandées</h2>
