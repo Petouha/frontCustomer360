@@ -103,12 +103,12 @@ const Principal = () => {
         <div id="search-form">
           <form onSubmit={handleSearch}>
             <div className="search-container">
-              <input type="text" id="search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Entrer un numéro" />
-              <span className="search-icon"><FontAwesomeIcon icon={faSearch} /></span>
+              <input type="text" id="search" className="search-bar" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Entrer un numéro" />
+
             </div>
           </form>
         </div>
-  
+
         <div className="section-container">
           <div id="customer-details" className="section white-box">
             <h2>Customer Details</h2>
@@ -124,7 +124,7 @@ const Principal = () => {
             <p><strong>Type SIM :</strong><span className="input-field"> {customerDetails.simType}</span></p>
             <p><strong>Etat :</strong> <span className="input-field">{customerDetails.status}</span></p>
           </div>
-  
+
           <div id="customer-behavior" className="section white-box">
             <h2>Comportement</h2>
             <div className="customer-behavior-details">
@@ -135,32 +135,32 @@ const Principal = () => {
               <p><strong>Epaiment :</strong><span className="input-field-b"> {customerBehavior.epaiment}</span></p>
             </div>
           </div>
-  
+
           <div id="customer-history" className="section white-box">
             <h2>Historique des activations</h2>
             <div className='table-container'>
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Forfait</th>
-                </tr>
-              </thead>
-              <tbody>
-                {customerHistory && customerHistory.length > 0 ? (
-                  customerHistory.map((item) => (
-                    <tr key={item.id}>
-                      <td>{item.dateActivation}</td>
-                      <td>{item.commercialName}</td>
-                    </tr>
-                  ))
-                ) : (
+              <table>
+                <thead>
                   <tr>
-                    <td colSpan="2">No customer history available.</td>
+                    <th>Date</th>
+                    <th>Forfait</th>
                   </tr>
-                )}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {customerHistory && customerHistory.length > 0 ? (
+                    customerHistory.map((item) => (
+                      <tr key={item.id}>
+                        <td>{item.dateActivation}</td>
+                        <td>{item.commercialName}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="2">No customer history available.</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -168,15 +168,15 @@ const Principal = () => {
           <div className="offer-box">
             <h2>Offres recommandées</h2>
             {recommendedOffers.map((offer) => (
-              <Offer key={offer.id} offer={offer}  />
+              <Offer key={offer.id} offer={offer} />
             ))}
           </div>
 
-          <div className="offer-box">
+          <div className="offer-box offer-voix">
             <h2>Offres voix</h2>
             {/* Utilisation de données statiques */}
             {customerPackages.map((offer) => (
-              <Offer key={offer.id} offer={offer}  MSISDN={customerDetails.MSISDN} />
+              <Offer key={offer.id} offer={offer} MSISDN={customerDetails.MSISDN} />
             ))}
           </div>
 

@@ -4,22 +4,45 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px;
 
 }
 
 #search-form {
 
-  position: absolute;
-
+  z-index: 1;
+  position: sticky;
   top: 0;
   right: 10;
   padding: 10px;
 }
 
+.search-icon {
+  position: absolute;
+  top: 5%;
+  left: 10px;
+  /* Modifier left au lieu de right */
+
+  color: gray;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-bottom: 500px;
+  /* Ajoutez l'espace souhaité entre la barre de recherche et les éléments suivants */
+}
+
 .search-wrapper {
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
+
 
 #search-form form {
   display: flex;
@@ -38,7 +61,8 @@
   background-repeat: no-repeat;
   background-position: calc(100% - 5px) center;
   background-size: 25px 25px;
-  padding-right: 20px;
+  padding-right: 40px;
+  /* Augmentez la valeur pour faire de la place pour l'icône */
   border: 1px solid white;
   text-align: center;
   font-size: 16px;
@@ -58,14 +82,12 @@
   height: 30px;
 }
 
-.search-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  color: gray;
-  cursor: pointer;
-  left: 30px;
+
+
+
+
+.search-container {
+  position: relative;
 }
 
 
@@ -90,6 +112,7 @@
   margin: 10px;
   padding: 20px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .section.white-box {
@@ -223,12 +246,12 @@
   border-radius: 5px;
 }
 
-.table-container
-{
-  overflow-y:auto;
+.table-container {
+  overflow-y: auto;
   max-height: 300px;
   overflow-x: hidden;
 }
+
 .offer-section {
   display: flex;
   justify-content: center;
@@ -248,7 +271,7 @@
   border-radius: 20px;
   text-align: center;
   background-color: #fff;
-  overflow-y:auto;
+  overflow-y: auto;
   max-height: 600px;
   overflow-x: hidden;
 }
@@ -257,4 +280,3 @@
   font-size: 18px;
   margin-bottom: 10px;
 }
-
