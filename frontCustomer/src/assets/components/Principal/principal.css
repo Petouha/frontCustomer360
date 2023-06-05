@@ -222,3 +222,9 @@
   margin-left: 10px;
   border-radius: 5px;
 }
+.table-container
+{
+  overflow-y:auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}

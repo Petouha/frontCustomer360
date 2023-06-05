@@ -10,7 +10,7 @@ const Principal = () => {
   const [customerDetails, setCustomerDetails] = useState([]);
   const [customerBehavior, setCustomerBehavior] = useState([]);
   const [customerHistory, setCustomerHistory] = useState([]);
-
+  const [customerPackages, setCustomerPackages] = useState([]);
   // Fonction pour récupérer les détails du client à partir de l'API
   const fetchCustomerDetails = async (customerId) => {
     try {
@@ -26,7 +26,6 @@ const Principal = () => {
   const fetchCustomerBehavior = async (customerId) => {
     try {
       const response = await axios.get(`http://localhost:8000/api/v1/users/${customerId}`);
-      console.log(response);
       setCustomerBehavior(response.data.subscriber_behaviour[0]);
     } catch (error) {
       console.log(error);
@@ -62,6 +61,7 @@ const Principal = () => {
         fetchCustomerDetails(customer.subscriber_info[0].MSISDN);
         fetchCustomerBehavior(customer.subscriber_info[0].MSISDN);
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
+        setCustomerPackages(customer.eligble_packages);
       }
       else {
         setCustomerDetails([]);
@@ -127,6 +127,7 @@ const Principal = () => {
           </div>
           <div id="customer-history" class="section white-box">
             <h2>Historique des activations</h2>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -149,11 +150,11 @@ const Principal = () => {
                 )}
               </tbody>
             </table>
-          </div>
+            </div>
         </div>
       </div>
     </div>
-
+    </div>
   )
 };
 
