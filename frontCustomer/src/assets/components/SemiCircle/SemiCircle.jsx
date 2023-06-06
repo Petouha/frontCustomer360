@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
-const SemiCercle = ({
+const SemiCircle = ({
   stroke = "#02B732",
   strokeWidth = 10,
   background = "#D0D0CE",
@@ -115,7 +115,7 @@ function percentageValidation(isRequired) {
 
 const percentageisRequired = percentageValidation(true);
 
-SemiCercle.propTypes = {
+SemiCircle.propTypes = {
   stroke: PropTypes.string,
   strokeWidth: PropTypes.number,
   background: PropTypes.string,
@@ -126,6 +126,6 @@ SemiCercle.propTypes = {
   percentage: percentageisRequired
 };
 
-export default SemiCercle;
+export default SemiCircle;
 
 
