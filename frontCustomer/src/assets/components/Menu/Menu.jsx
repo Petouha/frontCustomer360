@@ -48,10 +48,10 @@ export const Menu = () => {
 
   function DropdownLogOut(props) {
     return (<li className='dropdownItem'>
-        <img className='dropdownItem-icon' src={props.img} alt='Icon' />
-        <a className='dropdownItem-text' onClick={logOut} style={{ textDecoration: 'none' }}>{props.text}</a>
+      <img className='dropdownItem-icon' src={props.img} alt='Icon' />
+      <a className='dropdownItem-text' onClick={logOut} style={{ textDecoration: 'none' }}>{props.text}</a>
 
-      </li>);
+    </li>);
   }
 
   return (
@@ -61,7 +61,7 @@ export const Menu = () => {
           <img src={user}></img>
         </div>
         <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
-          <h3>Menu<br /><span></span></h3>
+
           <ul>
 
             <DropdownItem link={"/Profil"} text={"My Profile"} img="data:image/png;base64,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" />
