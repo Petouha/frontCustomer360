@@ -47,9 +47,9 @@ export const Menu = () => {
   }
 
   function DropdownLogOut(props) {
-    return (<li className='dropdownItem'>
+    return (<li className='dropdownItem' style={{ borderBottom: '0px' }}>
       <img className='dropdownItem-icon' src={props.img} alt='Icon' />
-      <a className='dropdownItem-text' onClick={logOut} style={{ textDecoration: 'none' }}>{props.text}</a>
+      <a className='dropdownItem-text' onClick={logOut} style={{ textDecoration: 'none'}}>{props.text}</a>
 
     </li>);
   }
