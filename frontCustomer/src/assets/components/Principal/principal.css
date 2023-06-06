@@ -341,3 +341,33 @@ ul.dropdown-menu li:first-child {
   margin-left: auto;
   margin-right: auto;
 }
+
+.consultation {
+  border-radius: 20px;
+  width: 700px;
+  height: 300px;
+  background-color: white;
+}
+
+.consumption{
+  width: auto;
+  height: inherit;
+  display: flex;
+}
+
+.consumption > * {
+  flex-grow: 1;
+  margin-right: 10px; /* Adjust the margin value to your desired spacing */
+}
+
+.consumption > *:last-child {
+  margin-right: 0; /* Remove the margin for the last child to avoid extra spacing */
+}
+
+.consumption-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+

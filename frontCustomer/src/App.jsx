@@ -5,6 +5,7 @@ import Profil from "./assets/components/Profil/profil"
 import SemiCircle from "./assets/components/SemiCircle/SemiCircle";
 import { Routes, Route } from "react-router-dom";
 import { RequireAuth } from "react-auth-kit";
+import { Consultation } from "./assets/components/Principal/Consultation";
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
       <Route path="/profil" element={<RequireAuth loginPath="/">
         <Profil />
       </RequireAuth>} />
-      <Route path="/test" element={<SemiCircle percentage={20} background="black" diameter={175} stroke="blue" strokeWidth={20}></SemiCircle>}></Route>
+      <Route path="/test" element={<Consultation></Consultation>}></Route>
     </Routes>
   );
 }

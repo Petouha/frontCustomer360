@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '../Menu/Menu';
 import Offer from './offres';
+import { Consultation } from './Consultation';
 
 const Principal = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,6 +13,7 @@ const Principal = () => {
   const [customerBehavior, setCustomerBehavior] = useState([]);
   const [customerHistory, setCustomerHistory] = useState([]);
   const [customerPackages, setCustomerPackages] = useState([]);
+  const [customerConsumption,setCustomerConsumption] = useState([]);
   const [recommendedOffers, setRecommendedOffers] = useState([
     { id: 1, title: 'Offer 1', description: 'Description of offer 1', activated: false },
     { id: 2, title: 'Offer 2', description: 'Description of offer 2', activated: false },
@@ -66,11 +68,13 @@ const Principal = () => {
     try {
       const response = await axios.get(`http://localhost:8000/api/v1/users/${searchTerm}`);
       const customer = response.data;
+      console.log(customer);
       if (customer.subscriber_info.length) {
         fetchCustomerDetails(customer.subscriber_info[0].MSISDN);
         fetchCustomerBehavior(customer.subscriber_info[0].MSISDN);
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
         setCustomerPackages(customer.eligble_packages);
+        setCustomerConsumption(customer.subscribers_consumption)
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
@@ -164,6 +168,13 @@ const Principal = () => {
             </div>
           </div>
         </div>
+        <div className='consultation'>
+          <Consultation conso={customerConsumption} packages={customerPackages}>
+                    
+          </Consultation>
+        </div>
+
+
         <div className="offer-section">
           <div className="offer-box">
             <h2>Offres recommandées</h2>
