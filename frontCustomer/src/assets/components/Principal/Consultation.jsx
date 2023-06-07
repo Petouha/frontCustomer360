@@ -18,7 +18,10 @@ export const Consultation = ({ conso, packages }) => {
       <div className="consumption">
         {conso.map((element) => (
           <div className="consumption-block">
-            <h3>{element.packageName}</h3>
+            <h3>
+              {element.packageName} <br/>
+              Jusqu'au {element.expirationDate}
+            </h3>
             <h4>Data</h4>
             <SemiCircle
             key={element.id}
