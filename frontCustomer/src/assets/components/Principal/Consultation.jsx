@@ -8,7 +8,6 @@ export const Consultation = ({ conso, packages }) => {
     return (currentData * 100) / originalData;
   };
   const calculatePercentageOffnet = (element, packages) => {
-    console.log(element);
     const currentData = element.remainingOffnet;
     const originalData = packages.find((item) => item.id === element.id).voiceOffnet;
     return (currentData * 100) / originalData;

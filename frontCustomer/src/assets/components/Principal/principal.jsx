@@ -65,6 +65,16 @@ const Principal = () => {
   // Fonction pour gérer la soumission du formulaire de recherche
   const handleSearch = async (e) => {
     e.preventDefault();
+    if (searchTerm.trim() === "") {
+      // Clear all data
+      setCustomerDetails([]);
+      setCustomerBehavior([]);
+      setCustomerHistory([]);
+      setCustomerConsumption([]);
+      setCustomerPackages([]);
+      localStorage.removeItem("MSISDN");
+      return;
+    }
     try {
       const response = await axios.get(`http://localhost:8000/api/v1/users/${searchTerm}`);
       const customer = response.data;
@@ -74,11 +84,14 @@ const Principal = () => {
         fetchCustomerBehavior(customer.subscriber_info[0].MSISDN);
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
         setCustomerPackages(customer.eligble_packages);
-        setCustomerConsumption(customer.subscribers_consumption)
+        setCustomerConsumption(customer.subscribers_consumption);
+        localStorage.setItem("MSISDN",customer.subscriber_info[0].MSISDN);
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
         setCustomerHistory([]);
+        setCustomerConsumption([]);
+        setCustomerPackages([]);
       }
     } catch (error) {
       console.log(error);

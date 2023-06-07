@@ -369,5 +369,15 @@ ul.dropdown-menu li:first-child {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
+.consumption > *:nth-child(1),
+.consumption > *:nth-child(2) {
+  border-right: 1px red solid;
+}
+
+
+h3{
+margin: 0;
+}
