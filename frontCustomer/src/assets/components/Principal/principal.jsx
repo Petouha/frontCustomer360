@@ -200,58 +200,58 @@ const Principal = () => {
         </div>
 
 
-          <div id='offre' className="offer-section">
-            <div className="offer-box">
-              <h2>Offres recommandées</h2>
-              {recommendedOffers.length > 0 ? (
-                recommendedOffers.map((offer) => (
-                  <Offer key={offer.id} offer={offer} />
-                ))
-              ) : (
-                <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
-              )}
-            </div>
-
-
-            <div className="offer-box offer-voix">
-              <h2>Offres voix</h2>
-              {customerPackages && customerPackages.length > 0 ? (
-                customerPackages.map((offer) => (
-                  <Offer key={offer.id} offer={offer} MSISDN={customerDetails.MSISDN} />
-                ))
-              ) : (
-                <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
-              )}
-            </div>
-
-
-            <div className="offer-box">
-              <h2>Offres Internet</h2>
-              {internetOffers.length > 0 ? (
-                internetOffers.map((offer) => (
-                  <Offer key={offer.id} offer={offer} />
-                ))
-              ) : (
-                <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
-              )}
-            </div>
-
-
-            
+        <div id='offre' className="offer-section">
+          <div className="offer-box">
+            <h2>Offres recommandées</h2>
+            {recommendedOffers.length > 0 ? (
+              recommendedOffers.map((offer) => (
+                <Offer key={offer.id} offer={offer} />
+              ))
+            ) : (
+              <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
+            )}
           </div>
 
-          <div className='migration'>
-            <h2>Migrations</h2>
-                {customerSubTypes && customerSubTypes.length > 0 ? (
-                  customerSubTypes.map((sub) => (
-                    <Migration MSISDN={customerDetails.MSISDN} migration={sub} key={sub.id}></Migration>
-                  ))
-                ) : (
-                  <h1 style={{ color: "red" }}>Pas de migrations disponibles.</h1>
-                )}
+
+          <div className="offer-box offer-voix">
+            <h2>Offres voix</h2>
+            {customerPackages && customerPackages.length > 0 ? (
+              customerPackages.map((offer) => (
+                <Offer key={offer.id} offer={offer} MSISDN={customerDetails.MSISDN} />
+              ))
+            ) : (
+              <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
+            )}
           </div>
 
-          <div className='plainte'>
+
+          <div className="offer-box">
+            <h2>Offres Internet</h2>
+            {internetOffers.length > 0 ? (
+              internetOffers.map((offer) => (
+                <Offer key={offer.id} offer={offer} />
+              ))
+            ) : (
+              <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
+            )}
+          </div>
+
+
+
+        </div>
+
+        <div className='migration'>
+          <h2>Migrations</h2>
+          {customerSubTypes && customerSubTypes.length > 0 ? (
+            customerSubTypes.map((sub) => (
+              <Migration MSISDN={customerDetails.MSISDN} migration={sub} key={sub.id}></Migration>
+            ))
+          ) : (
+            <h1 style={{ color: "red" }}>Pas de migrations disponibles.</h1>
+          )}
+        </div>
+
+        <div className='plainte'>
           <div>
             <Plaintes
               plaintes={plaintes}
@@ -260,7 +260,9 @@ const Principal = () => {
             </Plaintes>
           </div>
         </div>
+
       </div>
+
     </div>
   );
 };
