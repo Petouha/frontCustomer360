@@ -18,8 +18,7 @@ const Offer = ({ offer, MSISDN }) => {
     }
 
   };
-
-  return (
+  {return (
     <div className="offer">
       <p className='red-text'><strong>{offer.commercialName} </strong></p>
       <p className='black-text'> Pour <strong>{offer.price} D.A</strong> et pour <strong>{offer.duration} jours</strong></p>
@@ -27,7 +26,7 @@ const Offer = ({ offer, MSISDN }) => {
       {offer.voiceOnnet === 44640 && offer.SMS === 99999 && <p className='black-text'> <strong>Appels et SMS illimités </strong> vers Djezzy</p>}
       <button className="activate-button" onClick={handleActivateOffer}>Activer</button>
     </div>
-  );
+  );}
 };
 
 export default Offer;

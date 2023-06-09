@@ -16,17 +16,8 @@ const Principal = () => {
   const [customerPackages, setCustomerPackages] = useState([]);
   const [customerConsumption,setCustomerConsumption] = useState([]);
   const [plaintes, setPlaintes] = useState([]);
-  const [recommendedOffers, setRecommendedOffers] = useState([
-    { id: 1, title: 'Offer 1', description: 'Description of offer 1', activated: false },
-    { id: 2, title: 'Offer 2', description: 'Description of offer 2', activated: false },
-    { id: 3, title: 'Offer 3', description: 'Description of offer 3', activated: false },
-  ]);
-
-  const [internetOffers, setInternetOffers] = useState([
-    { id: 1, title: 'Internet Offer 1', description: 'Description of internet offer 1', activated: false },
-    { id: 2, title: 'Internet Offer 2', description: 'Description of internet offer 2', activated: false },
-    { id: 3, title: 'Internet Offer 3', description: 'Description of internet offer 3', activated: false },
-  ]);
+  const [recommendedOffers, setRecommendedOffers] = useState([]);
+  const [internetOffers, setInternetOffers] = useState([]);
 
   // Fonction pour récupérer les détails du client à partir de l'API
   const fetchCustomerDetails = async (customerId) => {
@@ -102,13 +93,24 @@ const Principal = () => {
         setCustomerPackages(customer.eligble_packages);
         setCustomerConsumption(customer.subscribers_consumption);
         fetchPlaintes(customer.subscriber_info[0].MSISDN);
-       
+        setInternetOffers([
+          { id: 1, title: 'Internet Offer 1', description: 'Description of internet offer 1', activated: false },
+          { id: 2, title: 'Internet Offer 2', description: 'Description of internet offer 2', activated: false },
+          { id: 3, title: 'Internet Offer 3', description: 'Description of internet offer 3', activated: false },
+        ]);
+        setRecommendedOffers([
+          { id: 1, title: 'Offer 1', description: 'Description of offer 1', activated: false },
+          { id: 2, title: 'Offer 2', description: 'Description of offer 2', activated: false },
+          { id: 3, title: 'Offer 3', description: 'Description of offer 3', activated: false },
+        ]);
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
         setCustomerHistory([]);
         setCustomerConsumption([]);
         setCustomerPackages([]);
+        setRecommendedOffers([]);
+        setInternetOffers([]);
         setPlaintes([]);
       }
     } catch (error) {
@@ -193,37 +195,52 @@ const Principal = () => {
         </div>
 
 
-        <div id='offre' className="offer-section">
-          <div className="offer-box">
-            <h2>Offres recommandées</h2>
-            {recommendedOffers.map((offer) => (
-              <Offer key={offer.id} offer={offer} />
-            ))}
-          </div>
+          <div id='offre' className="offer-section">
+            <div className="offer-box">
+              <h2>Offres recommandées</h2>
+              {recommendedOffers.length > 0 ? (
+                recommendedOffers.map((offer) => (
+                  <Offer key={offer.id} offer={offer} />
+                ))
+              ) : (
+                <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
+              )}
+            </div>
 
-          <div className="offer-box offer-voix">
-            <h2>Offres voix</h2>
-            {/* Utilisation de données statiques */}
-            {customerPackages.map((offer) => (
-              <Offer key={offer.id} offer={offer} MSISDN={customerDetails.MSISDN} />
-            ))}
-          </div>
 
-          <div className="offer-box">
-            <h2>Offres Internet</h2>
-            {internetOffers.map((offer) => (
-              <Offer key={offer.id} offer={offer} />
-            ))}
-          </div>
-        </div>
+            <div className="offer-box offer-voix">
+              <h2>Offres voix</h2>
+              {customerPackages && customerPackages.length > 0 ? (
+                customerPackages.map((offer) => (
+                  <Offer key={offer.id} offer={offer} MSISDN={customerDetails.MSISDN} />
+                ))
+              ) : (
+                <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
+              )}
+            </div>
 
-        <div>
+
+            <div className="offer-box">
+              <h2>Offres Internet</h2>
+              {internetOffers.length > 0 ? (
+                internetOffers.map((offer) => (
+                  <Offer key={offer.id} offer={offer} />
+                ))
+              ) : (
+                <h1 style={{ color: "red" }}>Pas de forfaits disponibles.</h1>
+              )}
+            </div>
+
+
+            
+          </div>
           <div>
-            <Plaintes
-            plaintes={plaintes}
-            ></Plaintes>
-          </div>
-        </div>
+              <div>
+                <Plaintes
+                plaintes={plaintes}
+                ></Plaintes>
+              </div>
+            </div>
       </div>
     </div>
   );

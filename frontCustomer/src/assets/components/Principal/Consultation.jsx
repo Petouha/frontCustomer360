@@ -43,5 +43,5 @@ export const Consultation = ({ conso, packages }) => {
     );
   }
 
-  return null; // Return null or some fallback component when the data is not available
+  return (<h1 style={{ color: "red", textAlign: "center" }}>Aucun forfait n'est activé pour l'instant</h1>); // Return null or some fallback component when the data is not available
 };
