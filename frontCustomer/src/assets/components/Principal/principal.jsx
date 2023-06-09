@@ -7,6 +7,7 @@ import { Menu } from '../Menu/Menu';
 import Offer from './offres';
 import { Consultation } from './Consultation';
 import { Plaintes } from '../Plaintes/Plaintes';
+import { Migration } from '../Migration/Migration';
 
 const Principal = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,6 +17,7 @@ const Principal = () => {
   const [customerPackages, setCustomerPackages] = useState([]);
   const [customerConsumption, setCustomerConsumption] = useState([]);
   const [plaintes, setPlaintes] = useState([]);
+  const [customerSubTypes, setCustomerSubTypes] = useState([]);
   const [recommendedOffers, setRecommendedOffers] = useState([]);
   const [internetOffers, setInternetOffers] = useState([]);
 
@@ -79,7 +81,9 @@ const Principal = () => {
       setCustomerConsumption([]);
       setCustomerPackages([]);
       setPlaintes([]);
-      localStorage.removeItem("MSISDN");
+      setInternetOffers([]);
+      setRecommendedOffers([]);
+      setCustomerSubTypes([]);
       return;
     }
     try {
@@ -93,6 +97,7 @@ const Principal = () => {
         setCustomerPackages(customer.eligble_packages);
         setCustomerConsumption(customer.subscribers_consumption);
         fetchPlaintes(customer.subscriber_info[0].MSISDN);
+        setCustomerSubTypes(customer.subscription_type);
         setInternetOffers([
           { id: 1, title: 'Internet Offer 1', description: 'Description of internet offer 1', activated: false },
           { id: 2, title: 'Internet Offer 2', description: 'Description of internet offer 2', activated: false },
@@ -234,11 +239,25 @@ const Principal = () => {
 
             
           </div>
+
+          <div className='migration'>
+            <h2>Migrations</h2>
+                {customerSubTypes && customerSubTypes.length > 0 ? (
+                  customerSubTypes.map((sub) => (
+                    <Migration MSISDN={customerDetails.MSISDN} migration={sub} key={sub.id}></Migration>
+                  ))
+                ) : (
+                  <h1 style={{ color: "red" }}>Pas de migrations disponibles.</h1>
+                )}
+          </div>
+
           <div className='plainte'>
           <div>
             <Plaintes
               plaintes={plaintes}
-            ></Plaintes>
+            >
+
+            </Plaintes>
           </div>
         </div>
       </div>

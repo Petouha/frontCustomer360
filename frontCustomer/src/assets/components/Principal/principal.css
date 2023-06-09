@@ -431,3 +431,23 @@ h3 {
   max-height: 500px;
   overflow-x: hidden;
 }
+
+.migration {
+  display: inline-block;
+  width: 800px;
+  min-height: 800px;
+  height: 300px;
+  min-height: 400px;
+  vertical-align: top;
+  margin: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
