@@ -289,7 +289,7 @@ html {
 }
 
 .offer-box p {
-  font-size: 18px;
+
   margin-bottom: 10px;
 }
 
@@ -327,6 +327,7 @@ ul.dropdown-menu li:first-child {
   align-items: center;
   text-align: center;
   height: 100%;
+
 }
 
 .offer-box .offer p {
@@ -338,6 +339,20 @@ ul.dropdown-menu li:first-child {
   height: 552px;
   /* Modifier la valeur de hauteur selon vos besoins */
 }
+
+
+
+.red-text {
+  color: red;
+  font-size: 20px;
+}
+
+.black-text {
+
+  font-size: 15px;
+
+}
+
 
 .activate-button {
   display: flex;
