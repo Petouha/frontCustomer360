@@ -1,0 +1,16 @@
+.plaintes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plainte-item {
+    width: 500px;
+    height: 110px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #e6e4e4;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+}

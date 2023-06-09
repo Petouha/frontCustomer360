@@ -14,7 +14,7 @@ const Principal = () => {
   const [customerBehavior, setCustomerBehavior] = useState([]);
   const [customerHistory, setCustomerHistory] = useState([]);
   const [customerPackages, setCustomerPackages] = useState([]);
-  const [customerConsumption,setCustomerConsumption] = useState([]);
+  const [customerConsumption, setCustomerConsumption] = useState([]);
   const [plaintes, setPlaintes] = useState([]);
   const [recommendedOffers, setRecommendedOffers] = useState([
     { id: 1, title: 'Offer 1', description: 'Description of offer 1', activated: false },
@@ -53,7 +53,7 @@ const Principal = () => {
         `http://localhost:8000/api/v1/users/reclamations/${searchTerm}`
       );
       setPlaintes(response.data);
-      
+
     } catch (error) {
       console.error("Error fetching plaintes:", error);
     }
@@ -102,7 +102,7 @@ const Principal = () => {
         setCustomerPackages(customer.eligble_packages);
         setCustomerConsumption(customer.subscribers_consumption);
         fetchPlaintes(customer.subscriber_info[0].MSISDN);
-       
+
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
@@ -186,9 +186,9 @@ const Principal = () => {
           </div>
         </div>
         <div className='consultation'>
-          <h2 style={{ textAlign:"center" }}>Consultation</h2>
+          <h2 style={{ textAlign: "center" }}>Consultation</h2>
           <Consultation conso={customerConsumption} packages={customerPackages}>
-                    
+
           </Consultation>
         </div>
 
@@ -217,10 +217,10 @@ const Principal = () => {
           </div>
         </div>
 
-        <div>
+        <div className='plainte'>
           <div>
             <Plaintes
-            plaintes={plaintes}
+              plaintes={plaintes}
             ></Plaintes>
           </div>
         </div>
