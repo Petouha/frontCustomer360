@@ -10,16 +10,15 @@ import { useSignOut } from 'react-auth-kit';
 export const Menu = () => {
   const signOut = useSignOut();
   const navigate = useNavigate();
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const logOut = () => {
-    const confirmed = window.confirm("Etes vous sûrs de vouloir vous déconnecter?");
-    if (confirmed) {
+    const handleLogout = () => {
+      setShowConfirmation(false);
       localStorage.clear();
       signOut();
-      navigate("/");
-    }
-  }
-
+      navigate('/');
+    };
+  
   const [open, setOpen] = useState(false);
 
   let menuRef = useRef();
@@ -53,7 +52,21 @@ export const Menu = () => {
   function DropdownLogOut(props) {
     return (<li className='dropdownItem' style={{ borderBottom: '0px' }}>
       <img className='dropdownItem-icon' src={props.img} alt='Icon' />
-      <a className='dropdownItem-text' onClick={logOut} style={{ textDecoration: 'none'}}>{props.text}</a>
+      <div>
+      <a onClick={() => setShowConfirmation(true)}>Logout</a>
+
+      {showConfirmation && (
+        <div className="custom-modal">
+          <div className="modal-content">
+            <p>Êtes-vous sûrs de vouloir vous déconnecter?</p>
+            <div>
+              <button onClick={handleLogout}>Confirmer</button>
+              <button onClick={() => setShowConfirmation(false)}>Annuler</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
 
     </li>);
   }
@@ -80,3 +93,4 @@ export const Menu = () => {
     </div>
   );
 }
+
