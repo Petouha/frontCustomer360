@@ -5,14 +5,19 @@ import './Plaintes.css'
 export const Plaintes = ({ plaintes }) => {
   if (plaintes && plaintes.length > 0) {
     return (
-      <div className="plainte-container">
-        {plaintes.map((plainte) => (
-          <div className="plainte-item">
-            <h1>{plainte.dateReclamation}</h1>
-            <h2>{plainte.fullName}</h2>
-            <p>{plainte.reclamationText}</p>
-          </div>
-        ))}
+      <div className="ff">
+
+        <p className='titre' style={{ textAlign: "center" }}> <strong>Plaintes</strong></p>
+        <div className="plainte-container">
+          {plaintes.map((plainte) => (
+            <div className="plainte-item">
+              <h1 className="text">{plainte.fullName}</h1>
+              <h2 className="text-temp">{plainte.dateReclamation}</h2>
+
+              <p className="text-rec">{plainte.reclamationText}</p>
+            </div>
+          ))}
+        </div>
       </div>);
   }
 
