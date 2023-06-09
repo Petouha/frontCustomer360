@@ -93,9 +93,6 @@ const Principal = () => {
         setCustomerPackages(customer.eligble_packages);
         setCustomerConsumption(customer.subscribers_consumption);
         fetchPlaintes(customer.subscriber_info[0].MSISDN);
-<<<<<<< HEAD
-
-=======
         setInternetOffers([
           { id: 1, title: 'Internet Offer 1', description: 'Description of internet offer 1', activated: false },
           { id: 2, title: 'Internet Offer 2', description: 'Description of internet offer 2', activated: false },
@@ -106,7 +103,6 @@ const Principal = () => {
           { id: 2, title: 'Offer 2', description: 'Description of offer 2', activated: false },
           { id: 3, title: 'Offer 3', description: 'Description of offer 3', activated: false },
         ]);
->>>>>>> 9f92a908e5ef58220a2cddc747c9f206d5bd3c27
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
@@ -223,15 +219,6 @@ const Principal = () => {
               )}
             </div>
 
-<<<<<<< HEAD
-        <div className='plainte'>
-          <div>
-            <Plaintes
-              plaintes={plaintes}
-            ></Plaintes>
-          </div>
-        </div>
-=======
 
             <div className="offer-box">
               <h2>Offres Internet</h2>
@@ -247,14 +234,13 @@ const Principal = () => {
 
             
           </div>
+          <div className='plainte'>
           <div>
-              <div>
-                <Plaintes
-                plaintes={plaintes}
-                ></Plaintes>
-              </div>
-            </div>
->>>>>>> 9f92a908e5ef58220a2cddc747c9f206d5bd3c27
+            <Plaintes
+              plaintes={plaintes}
+            ></Plaintes>
+          </div>
+        </div>
       </div>
     </div>
   );
