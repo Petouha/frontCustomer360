@@ -3,7 +3,7 @@ import axios from 'axios';
 const Offer = ({ offer, MSISDN }) => {
   const handleActivateOffer = () => {
     // Appeler la fonction onActivateOffer avec l'offre en tant que paramètre
-    const confirmed = window.confirm("Are you sure you want to activate this package?");
+    const confirmed = window.confirm("Etes vous sûrs de vouloir activer ce forfait?");
     if (confirmed) {
       const pkgId = offer.id;
       console.log(MSISDN, pkgId);
