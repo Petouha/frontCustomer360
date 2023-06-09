@@ -6,6 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '../Menu/Menu';
 import Offer from './offres';
 import { Consultation } from './Consultation';
+import { Plaintes } from '../Plaintes/Plaintes';
 
 const Principal = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,6 +15,7 @@ const Principal = () => {
   const [customerHistory, setCustomerHistory] = useState([]);
   const [customerPackages, setCustomerPackages] = useState([]);
   const [customerConsumption,setCustomerConsumption] = useState([]);
+  const [plaintes, setPlaintes] = useState([]);
   const [recommendedOffers, setRecommendedOffers] = useState([
     { id: 1, title: 'Offer 1', description: 'Description of offer 1', activated: false },
     { id: 2, title: 'Offer 2', description: 'Description of offer 2', activated: false },
@@ -45,6 +47,18 @@ const Principal = () => {
     }
   };
 
+  const fetchPlaintes = async (searchTerm) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/v1/users/reclamations/${searchTerm}`
+      );
+      setPlaintes(response.data);
+      
+    } catch (error) {
+      console.error("Error fetching plaintes:", error);
+    }
+  };
+
   // Fonction pour récupérer l'historique du client à partir de l'API
   const fetchCustomerHistory = async (customerId) => {
     try {
@@ -60,6 +74,7 @@ const Principal = () => {
     fetchCustomerDetails(searchTerm);
     fetchCustomerBehavior(searchTerm);
     fetchCustomerHistory(searchTerm);
+    fetchPlaintes(searchTerm);
   }, []);
 
   // Fonction pour gérer la soumission du formulaire de recherche
@@ -72,6 +87,7 @@ const Principal = () => {
       setCustomerHistory([]);
       setCustomerConsumption([]);
       setCustomerPackages([]);
+      setPlaintes([]);
       localStorage.removeItem("MSISDN");
       return;
     }
@@ -85,32 +101,20 @@ const Principal = () => {
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
         setCustomerPackages(customer.eligble_packages);
         setCustomerConsumption(customer.subscribers_consumption);
-        localStorage.setItem("MSISDN",customer.subscriber_info[0].MSISDN);
+        fetchPlaintes(customer.subscriber_info[0].MSISDN);
+       
       } else {
         setCustomerDetails([]);
         setCustomerBehavior([]);
         setCustomerHistory([]);
         setCustomerConsumption([]);
         setCustomerPackages([]);
+        setPlaintes([]);
       }
     } catch (error) {
       console.log(error);
     }
   };
-
-  // Fonction pour activer une offre
-  // const handleActivateOffer = (offerId) => {
-  //   // Parcourez les offres recommandées et les offres Internet pour trouver l'offre correspondante
-  //   const updatedRecommendedOffers = recommendedOffers.map((offer) =>
-  //     offer.id === offerId ? { ...offer, activated: true } : offer
-  //   );
-  //   const updatedInternetOffers = internetOffers.map((offer) =>
-  //     offer.id === offerId ? { ...offer, activated: true } : offer
-  //   );
-
-  //   setRecommendedOffers(updatedRecommendedOffers);
-  //   setInternetOffers(updatedInternetOffers);
-  // };
 
   return (
     <div>
@@ -210,6 +214,14 @@ const Principal = () => {
             {internetOffers.map((offer) => (
               <Offer key={offer.id} offer={offer} />
             ))}
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <Plaintes
+            plaintes={plaintes}
+            ></Plaintes>
           </div>
         </div>
       </div>
