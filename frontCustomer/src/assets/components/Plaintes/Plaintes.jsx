@@ -12,7 +12,7 @@ export const Plaintes = ({ plaintes }) => {
           {plaintes.map((plainte) => (
             <div className="plainte-item">
               <h1 className="text">{plainte.fullName}</h1>
-              <h2 className="text-temp">{plainte.dateReclamation}</h2>
+              <h1 className="text-temp">{plainte.dateReclamation}</h1>
 
               <p className="text-rec">{plainte.reclamationText}</p>
             </div>
