@@ -192,8 +192,8 @@ const Principal = () => {
             </div>
           </div>
         </div>
-        <div className='consultation'>
-          <h2 style={{ textAlign: "center" }}><strong>Consultation</strong></h2>
+        <div className='consultation' id='consultation'>
+          <h2 style={{ textAlign: "center" }}>Consultation</h2>
           <Consultation conso={customerConsumption} packages={customerPackages}>
 
           </Consultation>
@@ -201,7 +201,7 @@ const Principal = () => {
 
 
         <div id='offre' className="offer-section">
-          <div className="offer-box offer-reco">
+          <div className="offer-box">
             <h2>Offres recommandées</h2>
             {recommendedOffers.length > 0 ? (
               recommendedOffers.map((offer) => (
@@ -225,7 +225,7 @@ const Principal = () => {
           </div>
 
 
-          <div className="offer-box offer-internet">
+          <div className="offer-box">
             <h2>Offres Internet</h2>
             {internetOffers.length > 0 ? (
               internetOffers.map((offer) => (
@@ -240,7 +240,7 @@ const Principal = () => {
 
         </div>
 
-        <div className='migration'>
+        <div className='migration' id='migration'>
           <h2>Migrations</h2>
           {customerSubTypes && customerSubTypes.length > 0 ? (
             customerSubTypes.map((sub) => (
@@ -251,14 +251,16 @@ const Principal = () => {
           )}
         </div>
 
-        <div className='plainte'>
-          <div>
-            <Plaintes
-              plaintes={plaintes}
-            >
-
-            </Plaintes>
-          </div>
+        <div className='plainte' id='plaintes'>
+          <h2 style={{ textAlign: "center" }}>Plaintes</h2>
+          {
+            plaintes && plaintes.length > 0 ? (
+              <Plaintes
+                plaintes={plaintes} />
+            ) : (
+              <h1 style={{ color: "red" }}>Pas de plaintes disponibles.</h1>
+            )
+          }
         </div>
 
       </div>
@@ -268,4 +270,3 @@ const Principal = () => {
 };
 
 export default Principal;
-
