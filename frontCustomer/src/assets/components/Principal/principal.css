@@ -196,6 +196,61 @@ html {
   text-align: center;
 }
 
+#customer-details h2 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7dKY5d11m3R0usCKIujbfsip_u1A-kwoDyNOWNBQuIbMmXc-hu19u0H3yjVxfvwSePj8&usqp=CAU");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 248px) center;
+  background-size: 30px 30px;
+  padding-left: 40px;
+}
+
+#customer-behavior h2 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOj7idf7F3dZCsnY-GIesTsBbt2QBlWz3uPqfhvSfv20oAMKtqhG98mDZKK8uHDQMAWdY&usqp=CAU");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 240px) center;
+  background-size: 30px 30px;
+  padding-left: 40px;
+}
+
+#customer-history h2 {
+  background-image: url("data:image/png;base64,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");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 240px) center;
+  background-size: 50px 50px;
+  padding-left: 40px;
+}
+
+.consultation h2 {
+  background-image: url("https://thumbs.dreamstime.com/b/anomalowa-ikona-koloru-czerwonego-dla-klienta-obs%C5%82uga-140921551.jpg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 400px) center;
+  background-size: 50px 50px;
+  padding-left: 40px;
+}
+
+.offer-internet h2 {
+  background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX31681673.jpg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 240px) center;
+  background-size: 40px 40px;
+  padding-left: 40px;
+}
+
+.offer-voix h2 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Q312kpk3MhTiM09SADhSKylM_EGJV9FUQPqOuzvXExlPij9_UUPIYQeDZQT2YzURPG8&usqp=CAU");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 225px) center;
+  background-size: 30px 30px;
+  padding-left: 40px;
+}
+
+.offer-reco h2 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYb80aEELIPGlDvpAyR9ou8SYfqEDE6oPZ_FhTixEU4PcjkfOH6vuNvGUGUMX73mJi6GQ&usqp=CAU");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 290px) center;
+  background-size: 30px 30px;
+  padding-left: 40px;
+}
 
 .section p {
   line-height: 1.6;
@@ -470,7 +525,8 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent black background */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -500,16 +556,19 @@ h3 {
 }
 
 .modal-content button:first-child {
-  background-color: #f44336; /* Red button */
+  background-color: #f44336;
+  /* Red button */
   color: #fff;
   border: none;
 }
 
 .modal-content button:last-child {
-  background-color: #fff; /* White button */
+  background-color: #fff;
+  /* White button */
   color: #333;
   border: 1px solid #ccc;
 }
+
 .migration-box {
   border: 1px solid #ccc;
   border-radius: 5px;
