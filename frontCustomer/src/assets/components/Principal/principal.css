@@ -67,10 +67,10 @@ html {
   width: 500px;
   height: 50px;
   border-radius: 30px;
-  background-image: url("https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png");
+  background-image: url("https://icones.pro/wp-content/uploads/2021/02/loupe-et-icone-de-recherche-de-couleur-rouge.png");
   background-repeat: no-repeat;
-  background-position: calc(100% - 5px) center;
-  background-size: 25px 25px;
+  background-position: calc(100% - 20px) center;
+  background-size: 28px 28px;
   padding-right: 40px;
   /* Augmentez la valeur pour faire de la place pour l'icône */
   border: 1px solid white;
