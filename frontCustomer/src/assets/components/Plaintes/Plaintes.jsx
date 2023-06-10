@@ -7,7 +7,7 @@ export const Plaintes = ({ plaintes }) => {
     return (
       <div className="ff">
 
-        <p className='titre' style={{ textAlign: "center" }}> <strong>Plaintes</strong></p>
+        
         <div className="plainte-container">
           {plaintes.map((plainte) => (
             <div className="plainte-item">

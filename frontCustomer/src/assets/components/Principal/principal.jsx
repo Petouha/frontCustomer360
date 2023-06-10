@@ -252,13 +252,15 @@ const Principal = () => {
         </div>
 
         <div className='plainte' id='plaintes'>
-          <div>
-            <Plaintes
-              plaintes={plaintes}
-            >
-
-            </Plaintes>
-          </div>
+        <h2 style={{ textAlign: "center" }}>Plaintes</h2>
+            {
+              plaintes && plaintes.length > 0 ? (
+                <Plaintes
+                plaintes={plaintes}/>
+              ) : (
+                <h1 style={{ color: "red" }}>Pas de plaintes disponibles.</h1>
+              )
+            }
         </div>
 
       </div>
