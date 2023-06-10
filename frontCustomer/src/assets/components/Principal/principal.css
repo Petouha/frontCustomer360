@@ -492,7 +492,7 @@ h3 {
 }
 
 .footer {
-  margin-bottom: 200px;
+  margin-bottom: 2000px;
   /* Ajoutez la valeur souhaitée pour créer un espace vide en bas */
 }
 
@@ -596,6 +596,12 @@ h3 {
   align-items: center !important;
   margin-left: 100px
 }
+
+.migration-titre {
+  text-align: center;
+  margin-right: 43px;
+}
+
 
 .titre-consultation {
   display: flex;

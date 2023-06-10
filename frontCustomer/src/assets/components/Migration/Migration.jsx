@@ -22,7 +22,7 @@ export const Migration = ({ MSISDN, migration }) => {
 
   return (
     <div className="migration-box">
-      <h2>
+      <h2 className='migration-titre'>
         <strong>{migration.commercialName}</strong>
       </h2>
       <button className="activate-button" onClick={() => setShowConfirmation(true)}>
