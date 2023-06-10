@@ -444,6 +444,8 @@ ul.dropdown-menu li:first-child {
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
+
 }
 
 .consultation {
@@ -545,6 +547,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .modal-content {
@@ -634,4 +637,24 @@ h3 {
 .scroll-to-top-button.visible {
   opacity: 1;
   visibility: visible;
+}
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Customize the scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+  background-color: #fa4545;
+  border-radius: 4px;
+}
+
+/* Customize the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+  background-color: #f50909;
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff;
 }
