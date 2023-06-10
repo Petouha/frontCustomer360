@@ -201,7 +201,7 @@ const Principal = () => {
 
 
         <div id='offre' className="offer-section">
-          <div className="offer-box">
+          <div className="offer-box offer-reco">
             <h2>Offres recommandées</h2>
             {recommendedOffers.length > 0 ? (
               recommendedOffers.map((offer) => (
@@ -225,7 +225,7 @@ const Principal = () => {
           </div>
 
 
-          <div className="offer-box">
+          <div className="offer-box offer-internet">
             <h2>Offres Internet</h2>
             {internetOffers.length > 0 ? (
               internetOffers.map((offer) => (
@@ -252,15 +252,15 @@ const Principal = () => {
         </div>
 
         <div className='plainte' id='plaintes'>
-        <h2 style={{ textAlign: "center" }}>Plaintes</h2>
-            {
-              plaintes && plaintes.length > 0 ? (
-                <Plaintes
-                plaintes={plaintes}/>
-              ) : (
-                <h1 style={{ color: "red" }}>Pas de plaintes disponibles.</h1>
-              )
-            }
+          <h2 style={{ textAlign: "center" }}>Plaintes</h2>
+          {
+            plaintes && plaintes.length > 0 ? (
+              <Plaintes
+                plaintes={plaintes} />
+            ) : (
+              <h1 style={{ color: "red" }}>Pas de plaintes disponibles.</h1>
+            )
+          }
         </div>
 
       </div>
