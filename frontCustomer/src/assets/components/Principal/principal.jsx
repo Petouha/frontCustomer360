@@ -8,6 +8,7 @@ import Offer from './offres';
 import { Consultation } from './Consultation';
 import { Plaintes } from '../Plaintes/Plaintes';
 import { Migration } from '../Migration/Migration';
+import ScrollToTopButton from './ScrollToTopButton';
 
 const Principal = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -265,6 +266,7 @@ const Principal = () => {
 
       </div>
 
+          <ScrollToTopButton></ScrollToTopButton>
     </div>
   );
 };
