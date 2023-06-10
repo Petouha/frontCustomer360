@@ -193,7 +193,7 @@ const Principal = () => {
           </div>
         </div>
         <div className='consultation'>
-          <h2 style={{ textAlign: "center" }}>Consultation</h2>
+          <h2 style={{ textAlign: "center" }}><strong>Consultation</strong></h2>
           <Consultation conso={customerConsumption} packages={customerPackages}>
 
           </Consultation>
@@ -201,7 +201,7 @@ const Principal = () => {
 
 
         <div id='offre' className="offer-section">
-          <div className="offer-box">
+          <div className="offer-box offer-reco">
             <h2>Offres recommandées</h2>
             {recommendedOffers.length > 0 ? (
               recommendedOffers.map((offer) => (
@@ -225,7 +225,7 @@ const Principal = () => {
           </div>
 
 
-          <div className="offer-box">
+          <div className="offer-box offer-internet">
             <h2>Offres Internet</h2>
             {internetOffers.length > 0 ? (
               internetOffers.map((offer) => (
