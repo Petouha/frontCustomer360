@@ -4,7 +4,7 @@ html {
       -webkit-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      pointer-events: none;
+      pointer-events:all;
 }
 
 #container {
