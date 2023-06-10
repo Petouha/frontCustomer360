@@ -260,6 +260,14 @@ html {
   padding-left: 40px;
 }
 
+.plainte h2 {
+  background-image: url("https://scontent.xx.fbcdn.net/v/t1.15752-9/350377558_199916129665129_1110266842020676_n.png?_nc_cat=100&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ejmd0XSBDKcAX_4obTn&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSvpGch1QaEDV-QloenREYUWvyANPnLfRxmaMHuZaFX1Q&oe=64A0795C");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 95px) center;
+  background-size: 32px 32px;
+  padding-left: 40px;
+}
+
 .section p {
   line-height: 1.6;
   margin-left: 30px;

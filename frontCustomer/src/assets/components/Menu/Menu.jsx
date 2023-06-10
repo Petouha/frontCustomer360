@@ -12,13 +12,13 @@ export const Menu = () => {
   const navigate = useNavigate();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-    const handleLogout = () => {
-      setShowConfirmation(false);
-      localStorage.clear();
-      signOut();
-      navigate('/');
-    };
-  
+  const handleLogout = () => {
+    setShowConfirmation(false);
+    localStorage.clear();
+    signOut();
+    navigate('/');
+  };
+
   const [open, setOpen] = useState(false);
 
   let menuRef = useRef();
@@ -53,20 +53,20 @@ export const Menu = () => {
     return (<li className='dropdownItem' style={{ borderBottom: '0px' }}>
       <img className='dropdownItem-icon' src={props.img} alt='Icon' />
       <div>
-      <a onClick={() => setShowConfirmation(true)}>Logout</a>
+        <a onClick={() => setShowConfirmation(true)}>Logout</a>
 
-      {showConfirmation && (
-        <div className="custom-modal">
-          <div className="modal-content">
-            <p>Êtes-vous sûrs de vouloir vous déconnecter?</p>
-            <div>
-              <button onClick={handleLogout}>Confirmer</button>
-              <button onClick={() => setShowConfirmation(false)}>Annuler</button>
+        {showConfirmation && (
+          <div className="custom-modal">
+            <div className="modal-content">
+              <p>Êtes-vous sûrs de vouloir vous déconnecter?</p>
+              <div>
+                <button onClick={handleLogout}>Confirmer</button>
+                <button onClick={() => setShowConfirmation(false)}>Annuler</button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
 
     </li>);
   }
