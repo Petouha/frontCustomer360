@@ -192,7 +192,7 @@ const Principal = () => {
             </div>
           </div>
         </div>
-        <div className='consultation'>
+        <div className='consultation' id='consultation'>
           <h2 style={{ textAlign: "center" }}>Consultation</h2>
           <Consultation conso={customerConsumption} packages={customerPackages}>
 
@@ -240,7 +240,7 @@ const Principal = () => {
 
         </div>
 
-        <div className='migration'>
+        <div className='migration' id='migration'>
           <h2>Migrations</h2>
           {customerSubTypes && customerSubTypes.length > 0 ? (
             customerSubTypes.map((sub) => (
@@ -251,7 +251,7 @@ const Principal = () => {
           )}
         </div>
 
-        <div className='plainte'>
+        <div className='plainte' id='plaintes'>
           <div>
             <Plaintes
               plaintes={plaintes}
