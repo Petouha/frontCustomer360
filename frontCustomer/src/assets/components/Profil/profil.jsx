@@ -4,7 +4,7 @@ import './profil.css';
 
 const UserPage = () => {
   const [user, setUser] = useState(null);
-  const [userReport,setUserReport] = useState([]);
+  const [userReport, setUserReport] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let isLoggedIn;
@@ -13,7 +13,7 @@ const UserPage = () => {
     const fetchUser = async () => {
       try {
         const email = localStorage.getItem("email");
-        const response = await axios.post(`http://localhost:8000/api/v1/employees/info`,{email});
+        const response = await axios.post(`http://localhost:8000/api/v1/employees/info`, { email });
         console.log(response.data.user_info[0]);
         // Replace this with your static user data
         // const staticUser = {
@@ -68,6 +68,7 @@ const UserPage = () => {
   return (
 
     <div className="container">
+
       <img src="https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png" alt="Description de l'image" className="photo-profil" />
 
       <div className="side-section">
