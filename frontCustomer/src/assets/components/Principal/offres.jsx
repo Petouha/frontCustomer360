@@ -21,7 +21,7 @@ const Offer = ({ offer, MSISDN }) => {
     <div className="offer">
       <p className='red-text'><strong>{offer.commercialName} </strong></p>
       <p className='black-text'> Pour <strong>{offer.price} D.A</strong> et pour <strong>{offer.duration} jours</strong></p>
-      <p className='black-text'><strong>{offer.data}Go</strong> + <strong>{offer.voiceOffnet} D.A</strong> vers tous les réseaux</p>
+      <p className='black-text'>Vous avez <strong>{offer.data}Go</strong> {offer.voiceOffnet !== null && offer.voiceOffnet !== 0  ?  <span>+ <strong>{offer.voiceOffnet}</strong> D.A vers tous les réseaux</span> : ''}</p>
       {offer.voiceOnnet === 44640 && offer.SMS === 99999 && <p className='black-text'> <strong>Appels et SMS illimités </strong> vers Djezzy</p>}
       <button className="activate-button" onClick={ () => setShowConfirmation(true)}>Activer</button>
 

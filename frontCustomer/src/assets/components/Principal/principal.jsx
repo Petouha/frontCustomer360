@@ -63,6 +63,27 @@ const Principal = () => {
     }
   };
 
+    const internetOffersArray = (array) =>
+    {
+      const internet=[];
+        array.forEach(pkg => {
+          if (pkg.packageType === 'DATA') {
+            internet.push(pkg);
+          }
+        });
+        return internet;
+    }
+
+    const bundleOffersArray = (array) =>
+    {
+      const bundle=[];
+        array.forEach(pkg => {
+          if (pkg.packageType === 'BUNDLE') {
+            bundle.push(pkg);
+          }
+        });
+        return bundle;
+    }
   // Effet pour récupérer les détails du client au chargement de la page
   useEffect(() => {
     fetchCustomerDetails(searchTerm);
@@ -95,15 +116,11 @@ const Principal = () => {
         fetchCustomerDetails(customer.subscriber_info[0].MSISDN);
         fetchCustomerBehavior(customer.subscriber_info[0].MSISDN);
         fetchCustomerHistory(customer.subscriber_info[0].MSISDN);
-        setCustomerPackages(customer.eligble_packages);
+        setCustomerPackages(bundleOffersArray(customer.eligble_packages));
         setCustomerConsumption(customer.subscribers_consumption);
         fetchPlaintes(customer.subscriber_info[0].MSISDN);
         setCustomerSubTypes(customer.subscription_type);
-        setInternetOffers([
-          { id: 1, title: 'Internet Offer 1', description: 'Description of internet offer 1', activated: false },
-          { id: 2, title: 'Internet Offer 2', description: 'Description of internet offer 2', activated: false },
-          { id: 3, title: 'Internet Offer 3', description: 'Description of internet offer 3', activated: false },
-        ]);
+        setInternetOffers(internetOffersArray(customer.eligble_packages));
         setRecommendedOffers([
           { id: 1, title: 'Offer 1', description: 'Description of offer 1', activated: false },
           { id: 2, title: 'Offer 2', description: 'Description of offer 2', activated: false },
