@@ -87,14 +87,14 @@ const UserPage = () => {
             <tr>
               <th>Name</th>
               <th>Last Login</th>
-              <th>Status</th>
+              
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{user.firstName + " " + user.lastName}</td>
               <td>{user.previousLogin}</td>
-              <td>{isLoggedIn ? 'Connected' : 'Not Connected'}</td>
+              
             </tr>
           </tbody>
         </table>
