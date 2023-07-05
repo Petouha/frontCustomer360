@@ -87,14 +87,22 @@ const UserPage = () => {
             <tr>
               <th>Name</th>
               <th>Last Login</th>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> d765e63853c5ed241c80e51844fd2dda51148ff6
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{user.firstName + " " + user.lastName}</td>
               <td>{user.previousLogin}</td>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> d765e63853c5ed241c80e51844fd2dda51148ff6
             </tr>
           </tbody>
         </table>
