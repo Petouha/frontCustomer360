@@ -63,27 +63,25 @@ const Principal = () => {
     }
   };
 
-    const internetOffersArray = (array) =>
-    {
-      const internet=[];
-        array.forEach(pkg => {
-          if (pkg.packageType === 'DATA') {
-            internet.push(pkg);
-          }
-        });
-        return internet;
-    }
+  const internetOffersArray = (array) => {
+    const internet = [];
+    array.forEach(pkg => {
+      if (pkg.packageType === 'DATA') {
+        internet.push(pkg);
+      }
+    });
+    return internet;
+  }
 
-    const bundleOffersArray = (array) =>
-    {
-      const bundle=[];
-        array.forEach(pkg => {
-          if (pkg.packageType === 'BUNDLE') {
-            bundle.push(pkg);
-          }
-        });
-        return bundle;
-    }
+  const bundleOffersArray = (array) => {
+    const bundle = [];
+    array.forEach(pkg => {
+      if (pkg.packageType === 'BUNDLE') {
+        bundle.push(pkg);
+      }
+    });
+    return bundle;
+  }
   // Effet pour récupérer les détails du client au chargement de la page
   useEffect(() => {
     fetchCustomerDetails(searchTerm);
@@ -144,7 +142,7 @@ const Principal = () => {
   return (
     <div>
       <Menu />
-      <img src="https://scontent.cdninstagram.com/v/t1.15752-9/293558223_1184855078914133_5227506387825766741_n.png?stp=dst-png_s320x320&_nc_cat=104&ccb=1-7&_nc_sid=5a057b&_nc_ohc=-7KlQnO2PJ4AX_wtQ_f&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.cdninstagram.com&oh=03_AdS6sqoGtonY6PAC8BALoU8O0aYDNaDKU9sJ91phUN2uGg&oe=648DE044" alt="Description de l'image" className="photo-profil" />
+      <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/293558223_1184855078914133_5227506387825766741_n.png?stp=dst-png_s206x206&_nc_cat=104&ccb=1-7&_nc_sid=aee45a&_nc_eui2=AeHXCXsHY8fmNrswsgk5mEoTndNUCUxrDtOd01QJTGsO0-8UkQQC1yaPFIm0WXdte0xWgSqbDT2hl8iStNAPtZjy&_nc_ohc=5Y6enf0uVS0AX9dabql&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTalnUwnPc2qanrNteqZYAlnnUwzEPG2eC_qbWw3RgIkQ&oe=64C6C904" alt="Description de l'image" className="photo-profil" />
       <div id="container">
         <div id="search-form">
           <form onSubmit={handleSearch}>
@@ -283,7 +281,7 @@ const Principal = () => {
 
       </div>
 
-          <ScrollToTopButton></ScrollToTopButton>
+      <ScrollToTopButton></ScrollToTopButton>
     </div>
   );
 };
