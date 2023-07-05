@@ -68,9 +68,9 @@ const UserPage = () => {
   return (
 
     <div className="container">
-
-      <img src="https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png" alt="Description de l'image" className="photo-profil" />
-
+      <a href="http://localhost:5173/principal">
+        <img src="https://seeklogo.com/images/D/djezzy-logo-A1B6F6E26F-seeklogo.com.png" alt="Description de l'image" className="photo-profil" />
+      </a>
       <div className="side-section">
         <img src="https://cdn-icons-png.flaticon.com/512/20/20698.png" alt="User Logo" className="photodeprofil" />
 
@@ -81,28 +81,23 @@ const UserPage = () => {
         </div>
       </div>
       <div className="user-info">
-        <h1>User Table</h1>
+        <h1>Table Agent</h1>
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Last Login</th>
-<<<<<<< HEAD
+              <th>Nom</th>
+              <th>Dernière connexion</th>
 
-=======
-              
->>>>>>> d765e63853c5ed241c80e51844fd2dda51148ff6
+
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{user.firstName + " " + user.lastName}</td>
               <td>{user.previousLogin}</td>
-<<<<<<< HEAD
 
-=======
-              
->>>>>>> d765e63853c5ed241c80e51844fd2dda51148ff6
+
+
             </tr>
           </tbody>
         </table>
@@ -129,7 +124,7 @@ const UserPage = () => {
             <tr>
               <th>Action</th>
               <th>Date</th>
-              <th>nom client</th>
+              <th>nom</th>
               <th>montant</th>
             </tr>
           </thead>
@@ -138,7 +133,8 @@ const UserPage = () => {
               <tr key={report.id}>
                 <td>{report.saleType}</td>
                 <td>{report.dateSale}</td>
-                <td>{report.fullName}</td>
+                <td>{report.fullName
+                }</td>
                 <td>{report.price}</td>
               </tr>
 
